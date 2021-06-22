@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NameEditorComponent } from './name-editor.component';
+import { BugTrackerComponent } from './bug-tracker.component';
 
-describe('NameEditorComponent', () => {
-  let component: NameEditorComponent;
-  let fixture: ComponentFixture<NameEditorComponent>;
+describe('BugTrackerComponent', () => {
+  let component: BugTrackerComponent;
+  let fixture: ComponentFixture<BugTrackerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NameEditorComponent ]
+      declarations: [ BugTrackerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NameEditorComponent);
+    fixture = TestBed.createComponent(BugTrackerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

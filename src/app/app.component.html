@@ -1,2 +1,4 @@
+<button class="btn" routerLink="/Add" routerLinkActive="active">Formulaire</button>
 <router-outlet></router-outlet>
-<app-profile-editor></app-profile-editor>
+<!--<app-add (newItemEvent)="addItem($event)"></app-add>-->
+<app-bug-tracker *ngFor="let bug of bugs" [bug]="bug"></app-bug-tracker>

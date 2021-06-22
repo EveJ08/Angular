@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Bug } from './@shared/models/bug';
+import { BugService } from './@shared/services/bug.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-first-project';
+
+  constructor(private bugService:BugService){}
+    bugs: Bug[] = this.bugService.getItems();
 }
+

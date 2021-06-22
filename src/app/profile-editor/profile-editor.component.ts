@@ -33,6 +33,7 @@ export class ProfileEditorComponent implements OnInit {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.profileForm.value);
+    console.log("test");
   }
 
   updateProfile() {

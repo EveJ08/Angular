@@ -1,0 +1,18 @@
+
+    <form class="form" [formGroup]="addBugForm" (ngSubmit)="create()">
+
+        <label for="title">Titre: </label>
+        <input class="rounded-input" id="title" type="text" formControlName="titre"><br><br>
+    
+        <label for="description">Description: </label>
+        <input class="rounded-input" id="description" type="text" formControlName="description">
+
+        <p>Compléter le formulaire pour activer le bouton.</p>
+        <button class="btn" type="submit" [disabled]="!addBugForm.valid">Envoyer</button>
+
+    </form>
+    <footer>
+        <button class="btn" routerLink="/" routerLinkActive="active">Page d'accueil</button>
+    </footer>
+
+

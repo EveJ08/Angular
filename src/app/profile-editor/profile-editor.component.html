@@ -1,41 +1,41 @@
-<form [formGroup]="profileForm">
+<form class="form" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
     <label for="first-name">First Name: </label>
-    <input id="first-name" type="text" formControlName="firstName"><br><br>
+    <input class="rounded-input" id="first-name" type="text" formControlName="firstName"><br><br>
   
     <label for="last-name">Last Name: </label>
-    <input id="last-name" type="text" formControlName="lastName">
+    <input class="rounded-input" id="last-name" type="text" formControlName="lastName">
 
     <div formGroupName="address">
         <h2>Address</h2>
       
         <label for="street">Street: </label>
-        <input id="street" type="text" formControlName="street"><br><br>
+        <input class="rounded-input" id="street" type="text" formControlName="street"><br><br>
       
         <label for="city">City: </label>
-        <input id="city" type="text" formControlName="city"><br><br>
+        <input class="rounded-input" id="city" type="text" formControlName="city"><br><br>
       
         <label for="state">State: </label>
-        <input id="state" type="text" formControlName="state"><br><br>
+        <input class="rounded-input" id="state" type="text" formControlName="state"><br><br>
       
         <label for="zip">Zip Code: </label>
-        <input id="zip" type="text" formControlName="zip">
+        <input class="rounded-input" id="zip" type="text" formControlName="zip">
     </div>
     <div formArrayName="aliases">
         <h2>Aliases</h2>
-        <button (click)="addAlias()">+ Add another alias</button><br><br>
+        <button class="btn" (click)="addAlias()">+ Add another alias</button><br><br>
       
         <div *ngFor="let alias of aliases.controls; let i=index">
           <!-- The repeated alias template -->
-          <label for="alias-{{ i }}">Alias:</label>
-          <input id="alias-{{ i }}" type="text" [formControlName]="i"><br><br>
+          <label for="alias-{{ i }}">Alias: </label>
+          <input class="rounded-input" id="alias-{{ i }}" type="text" [formControlName]="i"><br><br>
         </div>
       </div>
 
-    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()"></form>
+    <p>Complete the form to enable button.</p>
+<button class="btn" type="submit" [disabled]="!profileForm.valid">Submit</button>
+<p>Form Status: {{ profileForm.status }}</p>
+<button class="btn" (click)="updateProfile()">Update Profile</button>
   
 </form>
-<p>Complete the form to enable button.</p>
-<button type="submit" [disabled]="!profileForm.valid">Submit</button>
-<p>Form Status: {{ profileForm.status }}</p>
-<button (click)="updateProfile()">Update Profile</button>
+
